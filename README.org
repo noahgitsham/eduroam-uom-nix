@@ -1,0 +1,5 @@
+* How to run
+** On a flake enabled nix setup
+#+begin_src sh
+  nix run github:noahgitsham/eduroam-uom-nix
+#+end_src
