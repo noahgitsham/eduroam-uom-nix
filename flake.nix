@@ -8,7 +8,9 @@
   in {
     packages.x86_64-linux.default = pkgs.stdenv.mkDerivation {
       name = "eduroam-uom";
-      buildInputs = [ pkgs.python3 ];
+      buildInputs = [
+        (pkgs.python3.withPackages (python-pkgs: [ python-pkgs.dbus-python ]))
+      ];
       dontUnpack = true;
       installPhase = "install -Dm755 ${./eduroam-linux-TUoM-manchester.ac.uk.py} $out/bin/eduroam-uom";
     };
